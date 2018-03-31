@@ -13,15 +13,18 @@ int main()
     tester->startTestingMenu();
     
 //    Tablica *tab = new Tablica();
-////
 //    tab->pushFront(21);
 //    tab->pushFront(22);
 //    tab->pushFront(23);
-//    tab->print();
 //
 //    tab->pushBack(11);
 //    tab->pushBack(12);
 //    tab->pushBack(13);
+//    tab->print();
+//
+//    tab->popBack();
+//    tab->popBack();
+//    tab->popBack();
 //    tab->print();
 //
 //    Kopiec *heap = new Kopiec();

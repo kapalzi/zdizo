@@ -62,31 +62,35 @@ void Tester::generateRandomNumbersFile()
 void Tester::startTab()
 {
     tablica = new Tablica();
-    
-    char k;
+    int k;
     printf("Funkcje \n 1. Dodaj elementy z pliku od przodu \n 2. Dodaj elementy z pliku od tyłu \n 3. Usuń element z przodu \n 4. Usuń element z tyłu\n 5. Usuń element z pozycji");
     std::cin>>k;
-    switch(k)
-    {
-        case '1':
-            testTabFrontPush();
-            break;
-            
-        case '2':
-            testTabBackPush();
-            break;
+   
+//    do
+//    {
+        switch(k)
+        {
+            case 1:
+                testTabFrontPush();
+                break;
+                
+            case '2':
+                testTabBackPush();
+                break;
 
-//        case '3': testTabFrontPop();
-//
-//        case '4': testTabFrontPop();
-//
-//        case '5': testTabFrontPop();
-            
-        
-        default: printf("Nie ma takiej opcji");
-            
-    }
+            case 3:
+                testTabFrontPop();
+                break;
+    //
+    //        case '4': testTabFrontPop();
+    //
+    //        case '5': testTabFrontPop();
+                
+            default: printf("Nie ma takiej opcji");
+        }
     
+//    }
+//    while (k != 0 );
 }
 
 void Tester::testTabFrontPush()
@@ -100,7 +104,6 @@ void Tester::testTabFrontPush()
         tablica->pushFront(num);
     }
     printf("Dodane");
-//    tablica->print();
 }
 
 void Tester::testTabBackPush()
@@ -115,7 +118,17 @@ void Tester::testTabBackPush()
     }
     
     printf("Dodane");
+}
+
+void Tester::testTabFrontPop()
+{
     tablica->print();
+    for (int i=tablica->size; i>0; i--)
+    {
+        tablica->popFront();        
+    }
+    tablica->print();
+
 }
 
 void Tester::startList()

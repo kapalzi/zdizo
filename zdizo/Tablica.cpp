@@ -83,14 +83,14 @@ void Tablica::popFront()
 {
     if(tab)
     {
-        int *tmpTab = new int[size];
-        for (int i=1; i<=size; i++)
+        int *tmpTab = new int[size--];
+        for (int i=0; i<=size; i++)
         {
             tmpTab[i]=tab[i+1];
         }
         delete []tab;
         tab=tmpTab;
-        size--;
+//        size--;
     }
 }
 
