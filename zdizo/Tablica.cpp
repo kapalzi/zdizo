@@ -27,9 +27,9 @@ void Tablica::pushFront(int data)
 {
     if(tab)
     {
-        size++;
-        int *tmpTab = new int[size];
-        for (int i=1; i<=size; i++)
+        int newSize = size+1;
+        int *tmpTab = new int[newSize];
+        for (int i=1; i<size; i++)
         {
             tmpTab[i]=tab[i-1];
         }
@@ -37,6 +37,7 @@ void Tablica::pushFront(int data)
         delete []tab;
         tmpTab[0]=data;
         tab = tmpTab;
+        size=newSize;
     }
     else pushFirstElement(data);
 }
