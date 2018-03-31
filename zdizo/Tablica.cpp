@@ -19,16 +19,16 @@ Tablica::~Tablica()
 
 void Tablica::pushFirstElement(int data)
 {
-    tab = new int[0];
+    tab = new int[1];
     tab[0] = data;
+    size = 1;
 }
 
 void Tablica::pushFront(int data)
 {
     if(tab)
     {
-        int newSize = size+1;
-        int *tmpTab = new int[newSize];
+        int *tmpTab = new int[++size];
         for (int i=1; i<size; i++)
         {
             tmpTab[i]=tab[i-1];
@@ -37,7 +37,6 @@ void Tablica::pushFront(int data)
         delete []tab;
         tmpTab[0]=data;
         tab = tmpTab;
-        size=newSize;
     }
     else pushFirstElement(data);
 }
@@ -46,14 +45,13 @@ void Tablica::pushBack(int data)
 {
     if(tab)
     {
-        size++;
-        int *tmpTab = new int[size];
+        int *tmpTab = new int[size + 1];
         for (int i=0; i<size; i++)
         {
             tmpTab[i]=tab[i];
         }
         delete []tab;
-        tmpTab[size]=data;
+        tmpTab[size++]=data;
         tab = tmpTab;
     }
     else pushFirstElement(data);
@@ -132,13 +130,13 @@ void Tablica::print()
 {
     if(tab)
     {
-        for (int i=0; i<=size; i++)
+        for (int i=0; i<size; i++)
         {
             printf("[%d]",tab[i]);
         }
         printf("\n");
     }
-    else printf("No data");
+    else printf("No data\n");
 }
 
 

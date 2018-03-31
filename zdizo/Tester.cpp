@@ -27,11 +27,17 @@ void Tester::startTestingMenu()
     std::cin>>k;
     switch(k)
     {
-        case '1': startTab();
+        case '1':
+            startTab();
+            break;
             
-        case '2': startList();
+        case '2':
+            startList();
+            break;
             
-        case '3': startHeap();
+        case '3':
+            startHeap();
+            break;
             
         default: printf("Nie ma takiej opcji");
             
@@ -62,10 +68,14 @@ void Tester::startTab()
     std::cin>>k;
     switch(k)
     {
-        case '1': testTabFrontPush();
+        case '1':
+            testTabFrontPush();
+            break;
             
-//        case '2': testTabBackPush();
-//            
+        case '2':
+            testTabBackPush();
+            break;
+
 //        case '3': testTabFrontPop();
 //
 //        case '4': testTabFrontPop();
@@ -89,7 +99,22 @@ void Tester::testTabFrontPush()
         num = stoi(line);
         tablica->pushFront(num);
     }
+    printf("Dodane");
+//    tablica->print();
+}
+
+void Tester::testTabBackPush()
+{
+    fstream file("numbers.txt",ios::in);
+    string line;
+    int num;
+    while (getline(file, line))
+    {
+        num = stoi(line);
+        tablica->pushBack(num);
+    }
     
+    printf("Dodane");
     tablica->print();
 }
 
