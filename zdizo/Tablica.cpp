@@ -98,8 +98,7 @@ void Tablica::popBack()
 {
     if(tab)
     {
-        size--;
-        int *tmpTab = new int[size];
+        int *tmpTab = new int[size--];
         for (int i=0; i<=size; i++)
         {
             tmpTab[i]=tab[i];

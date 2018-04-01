@@ -29,4 +29,9 @@ public:
     void testTabBackPush();
     void testTabFrontPop();
     void testTabBackPop();
+    
+    void testListFrontPush();
+    void testListBackPush();
+    void testListFrontPop();
+    void testListBackPop();
 };

@@ -9,22 +9,6 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "zdizo/Lista.cpp"
-            timestampString = "543582328.571821"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
-            landmarkName = "Lista::pushAtIndex(int index, int data)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "zdizo/Kopiec.cpp"
             timestampString = "543582328.57244"
             startingColumnNumber = "9223372036854775807"
@@ -79,11 +63,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "zdizo/Tester.cpp"
-            timestampString = "544232489.54291"
+            timestampString = "544318171.156327"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "127"
-            endingLineNumber = "127"
+            startingLineNumber = "140"
+            endingLineNumber = "140"
             landmarkName = "Tester::testTabFrontPop()"
             landmarkType = "7">
          </BreakpointContent>

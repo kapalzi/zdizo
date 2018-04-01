@@ -14,6 +14,7 @@
 using namespace std;
 
 Tablica *tablica;
+Lista *list;
 
 Tester::Tester()
 {
@@ -46,7 +47,7 @@ void Tester::startTestingMenu()
 
 void Tester::generateRandomNumbersFile()
 {
-    int numberOfElements = 1000;
+    int numberOfElements = 10000;
     
     srand(time(NULL));
 
@@ -63,38 +64,50 @@ void Tester::startTab()
 {
     tablica = new Tablica();
     int k;
-    printf("Funkcje \n 1. Dodaj elementy z pliku od przodu \n 2. Dodaj elementy z pliku od tyłu \n 3. Usuń element z przodu \n 4. Usuń element z tyłu\n 5. Usuń element z pozycji");
-    std::cin>>k;
-   
-//    do
-//    {
+
+    do
+    {
+        printf("Funkcje Tablicy \n 1. Dodaj elementy z pliku od przodu \n 2. Dodaj elementy z pliku od tyłu \n 3. Usuń element z przodu \n 4. Usuń element z tyłu\n 5. Usuń element z pozycji");
+        std::cin>>k;
         switch(k)
         {
             case 1:
                 testTabFrontPush();
                 break;
                 
-            case '2':
+            case 2:
                 testTabBackPush();
                 break;
 
             case 3:
                 testTabFrontPop();
                 break;
-    //
-    //        case '4': testTabFrontPop();
-    //
-    //        case '5': testTabFrontPop();
+    
+            case 4:
+                testTabBackPop();
+                break;
+    
+//            case 5:
+//                testTabFrontPop();
+//                break;
                 
-            default: printf("Nie ma takiej opcji");
+            case 6:
+                tablica->print();
+                break;
+                
+            default: printf("Nie ma takiej opcji\n");
         }
     
-//    }
-//    while (k != 0 );
+    }
+    while (k != 0 );
 }
+
 
 void Tester::testTabFrontPush()
 {
+    const clock_t begin_time = clock();
+    // do something
+    
     fstream file("numbers.txt",ios::in);
     string line;
     int num;
@@ -103,7 +116,8 @@ void Tester::testTabFrontPush()
         num = stoi(line);
         tablica->pushFront(num);
     }
-    printf("Dodane");
+    std::cout << float( clock () - begin_time ) /  CLOCKS_PER_SEC;
+    printf("Dodane\n");
 }
 
 void Tester::testTabBackPush()
@@ -117,23 +131,118 @@ void Tester::testTabBackPush()
         tablica->pushBack(num);
     }
     
-    printf("Dodane");
+    printf("Dodane\n");
 }
 
 void Tester::testTabFrontPop()
 {
-    tablica->print();
     for (int i=tablica->size; i>0; i--)
     {
         tablica->popFront();        
     }
-    tablica->print();
+    printf("Usunięte\n");
+}
 
+void Tester::testTabBackPop()
+{
+    for (int i=tablica->size; i>0; i--)
+    {
+        tablica->popBack();
+    }
+    printf("Usunięte\n");
 }
 
 void Tester::startList()
 {
+    list = new Lista();
+    int k;
     
+    do
+    {
+        printf("Funkcje Listy \n 1. Dodaj elementy z pliku od przodu \n 2. Dodaj elementy z pliku od tyłu \n 3. Usuń element z przodu \n 4. Usuń element z tyłu\n 5. Usuń element z pozycji");
+        std::cin>>k;
+        switch(k)
+        {
+            case 1:
+                testListFrontPush();
+                break;
+                
+            case 2:
+                testListBackPush();
+                break;
+                
+            case 3:
+                testListFrontPop();
+                break;
+                
+            case 4:
+                testListBackPop();
+                break;
+                
+                //            case 5:
+                //                testTabFrontPop();
+                //                break;
+                
+            case 6:
+                list->print();
+                break;
+                
+            default: printf("Nie ma takiej opcji");
+        }
+        
+    }
+    while (k != 0 );
+}
+
+void Tester::testListFrontPush()
+{
+    fstream file("numbers.txt",ios::in);
+    string line;
+    int num;
+    while (getline(file, line))
+    {
+        num = stoi(line);
+        list->pushFront(num);
+    }
+    printf("Dodane\n");
+}
+
+void Tester::testListBackPush()
+{
+    fstream file("numbers.txt",ios::in);
+    string line;
+    int num;
+    while (getline(file, line))
+    {
+        num = stoi(line);
+        list->pushBack(num);
+    }
+    printf("Dodane\n");
+}
+
+void Tester::testListFrontPop()
+{
+    if (list->head)
+    {
+        while(list->counter>0)
+        {
+            list->popFront();
+        }
+        printf("Usunięte\n");
+    }
+
+}
+
+void Tester::testListBackPop()
+{
+    if (list->head)
+    {
+        while(list->counter>0)
+        {
+            list->popBack();
+        }
+        printf("Usunięte\n");
+    }
 }
 
 void Tester::startHeap()
