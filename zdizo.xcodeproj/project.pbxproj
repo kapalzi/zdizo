@@ -36,7 +36,7 @@
 		E2A801FD20665989006187F8 /* Tester.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Tester.cpp; sourceTree = "<group>"; };
 		E2A801FE20665989006187F8 /* Tester.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Tester.hpp; sourceTree = "<group>"; };
 		E2F67734204AFD6A00313FC0 /* zdizo */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = zdizo; sourceTree = BUILT_PRODUCTS_DIR; };
-		E2F67737204AFD6A00313FC0 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		E2F67737204AFD6A00313FC0 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = /Users/krzysztof/Documents/pwr/zdizo/zdizo/zdizo/main.cpp; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */

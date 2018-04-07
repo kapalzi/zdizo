@@ -15,6 +15,7 @@ using namespace std;
 
 Tablica *tablica;
 Lista *list;
+Kopiec *heap;
 
 Tester::Tester()
 {
@@ -47,16 +48,19 @@ void Tester::startTestingMenu()
 
 void Tester::generateRandomNumbersFile()
 {
-    int numberOfElements = 10000;
+    int numberOfElements = 3;
     
     srand(time(NULL));
 
-    ofstream file ("numbers.txt");
+    ofstream file ("/Users/krzysztof/Documents/pwr/zdizo/zdizo/numbers.txt");
+//    ofstream file ("numbers.txt");
+
+    file<<numberOfElements<<"\n";
     
-    for(int i=0; i<numberOfElements; i++)
+    for(int i=1; i<=numberOfElements; i++)
     {
-        int random_integer = (rand()%1000)+1;
-        file << random_integer << "\n";
+        int randomInteger = (rand()%1000)+1;
+        file << randomInteger << "\n";
     }
 }
 
@@ -67,7 +71,7 @@ void Tester::startTab()
 
     do
     {
-        printf("Funkcje Tablicy \n 1. Dodaj elementy z pliku od przodu \n 2. Dodaj elementy z pliku od tyłu \n 3. Usuń element z przodu \n 4. Usuń element z tyłu\n 5. Usuń element z pozycji");
+        printf("Funkcje Tablicy \n 1. Dodaj elementy z pliku od przodu \n 2. Dodaj elementy z pliku od tyłu \n 3. Usuń element z przodu \n 4. Usuń element z tyłu\n 5. Sprawdz czy wartosc jest w tablicy\n 6. Wypisz wszystkie elementy");
         std::cin>>k;
         switch(k)
         {
@@ -87,9 +91,12 @@ void Tester::startTab()
                 testTabBackPop();
                 break;
     
-//            case 5:
-//                testTabFrontPop();
-//                break;
+            case 5:
+                int look;
+                printf("Podaj szukana wartosc\n");
+                std::cin>>look;
+                printf("%i\n",tablica->isValue(look));
+                break;
                 
             case 6:
                 tablica->print();
@@ -106,50 +113,58 @@ void Tester::startTab()
 void Tester::testTabFrontPush()
 {
     const clock_t begin_time = clock();
-    // do something
     
     fstream file("numbers.txt",ios::in);
     string line;
     int num;
+    getline(file, line);
     while (getline(file, line))
     {
         num = stoi(line);
         tablica->pushFront(num);
     }
-    std::cout << float( clock () - begin_time ) /  CLOCKS_PER_SEC;
-    printf("Dodane\n");
+    std::cout << float( clock () - begin_time ) /  CLOCKS_PER_SEC<<std::endl;
+//    printf("Dodane\n");
 }
 
 void Tester::testTabBackPush()
 {
+    const clock_t begin_time = clock();
+    
     fstream file("numbers.txt",ios::in);
     string line;
     int num;
+    getline(file, line);
     while (getline(file, line))
     {
         num = stoi(line);
         tablica->pushBack(num);
     }
     
-    printf("Dodane\n");
+    std::cout << float( clock () - begin_time ) /  CLOCKS_PER_SEC<<std::endl;
+//    printf("Dodane\n");
 }
 
 void Tester::testTabFrontPop()
 {
+    const clock_t begin_time = clock();
     for (int i=tablica->size; i>0; i--)
     {
         tablica->popFront();        
     }
-    printf("Usunięte\n");
+//    printf("Usunięte\n");
+    std::cout << float( clock () - begin_time ) /  CLOCKS_PER_SEC<<std::endl;
 }
 
 void Tester::testTabBackPop()
 {
+    const clock_t begin_time = clock();
     for (int i=tablica->size; i>0; i--)
     {
         tablica->popBack();
     }
-    printf("Usunięte\n");
+//    printf("Usunięte\n");
+    std::cout << float( clock () - begin_time ) /  CLOCKS_PER_SEC<<std::endl;
 }
 
 void Tester::startList()
@@ -159,7 +174,7 @@ void Tester::startList()
     
     do
     {
-        printf("Funkcje Listy \n 1. Dodaj elementy z pliku od przodu \n 2. Dodaj elementy z pliku od tyłu \n 3. Usuń element z przodu \n 4. Usuń element z tyłu\n 5. Usuń element z pozycji");
+        printf("Funkcje Listy \n 1. Dodaj elementy z pliku od przodu \n 2. Dodaj elementy z pliku od tyłu \n 3. Usuń element z przodu \n 4. Usuń element z tyłu\n 5. Sprawdz czy wartosc jest w tablicy\n 6. Wypisz wszystkie elementy");
         std::cin>>k;
         switch(k)
         {
@@ -179,9 +194,12 @@ void Tester::startList()
                 testListBackPop();
                 break;
                 
-                //            case 5:
-                //                testTabFrontPop();
-                //                break;
+            case 5:
+                int look;
+                printf("Podaj szukana wartosc\n");
+                std::cin>>look;
+                printf("%i\n",list->isValue(look));
+                break;
                 
             case 6:
                 list->print();
@@ -196,6 +214,7 @@ void Tester::startList()
 
 void Tester::testListFrontPush()
 {
+    const clock_t begin_time = clock();
     fstream file("numbers.txt",ios::in);
     string line;
     int num;
@@ -204,11 +223,12 @@ void Tester::testListFrontPush()
         num = stoi(line);
         list->pushFront(num);
     }
-    printf("Dodane\n");
+    std::cout << float( clock () - begin_time )/  CLOCKS_PER_SEC <<std::endl;
 }
 
 void Tester::testListBackPush()
 {
+    const clock_t begin_time = clock();
     fstream file("numbers.txt",ios::in);
     string line;
     int num;
@@ -217,36 +237,106 @@ void Tester::testListBackPush()
         num = stoi(line);
         list->pushBack(num);
     }
-    printf("Dodane\n");
+    std::cout << float( clock () - begin_time )/  CLOCKS_PER_SEC <<std::endl;
 }
 
 void Tester::testListFrontPop()
 {
+    const clock_t begin_time = clock();
     if (list->head)
     {
         while(list->counter>0)
         {
             list->popFront();
         }
-        printf("Usunięte\n");
+        std::cout << float( clock () - begin_time )/  CLOCKS_PER_SEC <<std::endl;
     }
-
 }
 
 void Tester::testListBackPop()
 {
+    const clock_t begin_time = clock();
     if (list->head)
     {
         while(list->counter>0)
         {
             list->popBack();
         }
-        printf("Usunięte\n");
+        std::cout << float( clock () - begin_time )/  CLOCKS_PER_SEC <<std::endl;
     }
 }
 
 void Tester::startHeap()
 {
+    heap = new Kopiec();
+    int k;
     
+    do
+    {
+        printf("Funkcje Tablicy \n 1. Dodaj elementy z pliku \n 2. Usuń element 3. Sprawdz czy wartosc jest w kopcu\n 4. Wypisz wszystkie elementy");
+        std::cin>>k;
+        switch(k)
+        {
+            case 1:
+                testHeapPush();
+                break;
+                
+            case 2:
+//                testTabBackPush();
+                break;
+                
+            case 3:
+                testTabFrontPop();
+                break;
+                
+            case 4:
+                testTabBackPop();
+                break;
+                
+            case 5:
+                int look;
+                printf("Podaj szukana wartosc\n");
+                std::cin>>look;
+                printf("%i\n",tablica->isValue(look));
+                break;
+                
+            case 6:
+                heap->print();
+                break;
+                
+            default: printf("Nie ma takiej opcji\n");
+        }
+        
+    }
+    while (k != 0 );
 }
+void Tester::testHeapPush()
+{
+    const clock_t begin_time = clock();
+
+    fstream file ("/Users/krzysztof/Documents/pwr/zdizo/zdizo/numbers.txt");
+
+//    fstream file("numbers.txt",ios::in);
+    string line;
+    int num;
+    getline(file, line);
+    while (getline(file, line))
+    {
+        num = stoi(line);
+        heap->push(num);
+    }
+    
+    std::cout << float( clock () - begin_time ) /  CLOCKS_PER_SEC<<std::endl;
+
+}
+
+
+
+
+
+
+
+
+
+
 

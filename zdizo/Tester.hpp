@@ -34,4 +34,7 @@ public:
     void testListBackPush();
     void testListFrontPop();
     void testListBackPop();
+    
+    void testHeapPush();
+    void testHeapPop();
 };

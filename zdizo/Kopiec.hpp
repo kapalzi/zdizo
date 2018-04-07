@@ -20,5 +20,6 @@ public:
     void push(int data);
     void pop();
     bool isValue(int data);
+    void print();
 };
 

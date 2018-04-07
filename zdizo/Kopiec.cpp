@@ -14,6 +14,7 @@
 //węzeł k jest liściem, jeśli 2k + 2 > n
 
 #include "Kopiec.hpp"
+#include <iostream>
 
 Kopiec::Kopiec()
 {
@@ -99,6 +100,41 @@ bool Kopiec::isValue(int data)
         return true;
     }
     else return false; //dokonczyc albo search z tablicy
+}
+
+void Kopiec::print()
+{
+    if(tab)
+    {
+        int p = 1;
+        for (int i=0; i<size; i++)
+        {
+            printf("(%d)",tab[i]);
+            
+            if (p==i)
+            {
+                p*=2;
+                printf("\n");
+            }
+        }
+        
+        printf("\n");
+    }
+    else printf("No data\n");
+    
+//    int bin =1;
+//    for (int it=1;it < MAXVAL;it++)
+//    {
+//        std::cout << your_data;
+//
+//        if (it == bin)
+//        {
+//            bin = bin * 2;
+//            it = 1;
+//            std::cout << std::endl;
+//        }
+//
+//    }
 }
 
 
