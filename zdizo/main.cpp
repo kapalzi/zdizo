@@ -1,17 +1,13 @@
 //#include <iostream>
-//#include <iomanip>
-//#include <ctime>
-//#include <cstdlib>
-//#include "Tablica.hpp"
-#include "Tester.hpp"
 
-using namespace std;
+#include "Tester.hpp"
+//#include "Kopiec.hpp"
 
 int main()
 {
     Tester *tester =new Tester();
     tester->startTestingMenu();
-    
+
 //    Tablica *tab = new Tablica();
 //    tab->pushFront(21);
 //    tab->pushFront(22);
@@ -35,7 +31,9 @@ int main()
 //    heap->push(241);
 //    heap->push(71);
 //    heap->push(21);
-//
+
+//    heap->Tablica::print();
+    
 //    heap->print();
 //
 //    heap->pop();

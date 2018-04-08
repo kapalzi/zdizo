@@ -48,7 +48,7 @@ void Tester::startTestingMenu()
 
 void Tester::generateRandomNumbersFile()
 {
-    int numberOfElements = 3;
+    int numberOfElements = 24;
     
     srand(time(NULL));
 
@@ -273,7 +273,7 @@ void Tester::startHeap()
     
     do
     {
-        printf("Funkcje Tablicy \n 1. Dodaj elementy z pliku \n 2. Usuń element 3. Sprawdz czy wartosc jest w kopcu\n 4. Wypisz wszystkie elementy");
+        printf("Funkcje Tablicy \n 1. Dodaj elementy z pliku \n 2. Usuń element\n 3. Sprawdz czy wartosc jest w kopcu \n 4. Wypisz wszystkie elementy\n");
         std::cin>>k;
         switch(k)
         {
@@ -283,22 +283,20 @@ void Tester::startHeap()
                 
             case 2:
 //                testTabBackPush();
+                heap->Tablica::print();
                 break;
                 
             case 3:
-                testTabFrontPop();
-                break;
-                
-            case 4:
-                testTabBackPop();
-                break;
-                
-            case 5:
                 int look;
                 printf("Podaj szukana wartosc\n");
                 std::cin>>look;
                 printf("%i\n",tablica->isValue(look));
+                break;                break;
+                
+            case 4:
+                heap->print();
                 break;
+                
                 
             case 6:
                 heap->print();

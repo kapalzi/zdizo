@@ -31,7 +31,7 @@ void Kopiec::push(int data)
     if(tab)
     {
         pushBack(data);
-        int son = size;
+        int son = size-1;
         int dad = (size-1)/2;
         int tmp;
         while(data>tab[dad])
@@ -107,34 +107,23 @@ void Kopiec::print()
     if(tab)
     {
         int p = 1;
+        int l = 1;
         for (int i=0; i<size; i++)
         {
-            printf("(%d)",tab[i]);
+            printf("(%d}",tab[i]);
             
-            if (p==i)
+            if (p==l)
             {
-                p*=2;
+                p=p*2;
+                l=0;
                 printf("\n");
             }
+            l=l+1;
         }
         
         printf("\n");
     }
     else printf("No data\n");
-    
-//    int bin =1;
-//    for (int it=1;it < MAXVAL;it++)
-//    {
-//        std::cout << your_data;
-//
-//        if (it == bin)
-//        {
-//            bin = bin * 2;
-//            it = 1;
-//            std::cout << std::endl;
-//        }
-//
-//    }
 }
 
 
