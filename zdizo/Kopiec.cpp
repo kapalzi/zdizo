@@ -6,13 +6,6 @@
 //  Copyright © 2018 Krzysztof Kapała. All rights reserved.
 //
 
-//numer lewego syna = 2k + 1
-//numer prawego syna = 2k + 2
-//numer ojca = [(k - 1) / 2], dla k > 0
-//lewy syn istnieje, jeśli 2k + 1 < n
-//prawy syn istnieje, jeśli 2k + 2 < n
-//węzeł k jest liściem, jeśli 2k + 2 > n
-
 #include "Kopiec.hpp"
 #include <iostream>
 
@@ -23,7 +16,7 @@ Kopiec::Kopiec()
 
 Kopiec::~Kopiec()
 {
-    delete []tab;
+
 }
 
 void Kopiec::push(int data)

@@ -10,21 +10,21 @@
 #include <iostream>
 #include <fstream>
 #include <random>
-#include <time.h>
+#include <ctime>
 using namespace std;
 
-Tablica *tablica;
-Lista *list;
-Kopiec *heap;
+Tablica *tablica = new Tablica();
+Lista *list = new Lista();
+Kopiec *heap = new Kopiec();
 
 Tester::Tester(int numberOfElements)
 {
-    numberOfElements=numberOfElements;
+    Tester::numberOfElements=numberOfElements;
+    generateRandomNumbersFile();
 }
 
 void Tester::startTestingMenu()
 {
-    generateRandomNumbersFile();
     char k;
     printf("Wybierz strukturę \n 1. Tablica \n 2. Lista \n 3. Kopiec");
     std::cin>>k;
@@ -66,7 +66,6 @@ void Tester::generateRandomNumbersFile()
 
 void Tester::startTab()
 {
-    tablica = new Tablica();
     int k;
 
     do
@@ -112,29 +111,25 @@ void Tester::startTab()
 
 void Tester::testTabFrontPush()
 {
-    const clock_t begin_time = clock();
-    
     fstream file("numbers.txt",ios::in);
     string line;
     int num;
-    getline(file, line);
+    const clock_t begin_time = clock();
     while (getline(file, line))
     {
         num = stoi(line);
         tablica->pushFront(num);
     }
-    std::cout << float( clock () - begin_time ) /  CLOCKS_PER_SEC<<std::endl;
+    std::cout << float(clock () - begin_time ) /  CLOCKS_PER_SEC<<std::endl;
 //    printf("Dodane\n");
 }
 
 void Tester::testTabBackPush()
 {
-    const clock_t begin_time = clock();
-    
     fstream file("numbers.txt",ios::in);
     string line;
     int num;
-    getline(file, line);
+    const clock_t begin_time = clock();
     while (getline(file, line))
     {
         num = stoi(line);
@@ -169,7 +164,6 @@ void Tester::testTabBackPop()
 
 void Tester::startList()
 {
-    list = new Lista();
     int k;
     
     do
@@ -214,10 +208,10 @@ void Tester::startList()
 
 void Tester::testListFrontPush()
 {
-    const clock_t begin_time = clock();
     fstream file("numbers.txt",ios::in);
     string line;
     int num;
+    const clock_t begin_time = clock();
     while (getline(file, line))
     {
         num = stoi(line);
@@ -228,10 +222,10 @@ void Tester::testListFrontPush()
 
 void Tester::testListBackPush()
 {
-    const clock_t begin_time = clock();
     fstream file("numbers.txt",ios::in);
     string line;
     int num;
+    const clock_t begin_time = clock();
     while (getline(file, line))
     {
         num = stoi(line);
@@ -268,7 +262,6 @@ void Tester::testListBackPop()
 
 void Tester::startHeap()
 {
-    heap = new Kopiec();
     int k;
     
     do
@@ -309,20 +302,19 @@ void Tester::startHeap()
 }
 void Tester::testHeapPush()
 {
-    const clock_t begin_time = clock();
+    
 
     fstream file ("/Users/krzysztof/Documents/pwr/zdizo/zdizo/numbers.txt");
 
 //    fstream file("numbers.txt",ios::in);
     string line;
     int num;
-    getline(file, line);
+    const clock_t begin_time = clock();
     while (getline(file, line))
     {
         num = stoi(line);
         heap->push(num);
     }
-    
     std::cout << float( clock () - begin_time ) /  CLOCKS_PER_SEC<<std::endl;
 
 }

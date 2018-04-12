@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "zdizo/Kopiec.cpp"
-            timestampString = "545258066.337787"
+            timestampString = "545263616.7094001"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
             landmarkName = "Kopiec::push(int data)"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "zdizo/Kopiec.cpp"
-            timestampString = "545258066.338244"
+            timestampString = "545263616.7094949"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
             landmarkName = "Kopiec::push(int data)"
             landmarkType = "7">
          </BreakpointContent>
@@ -63,12 +63,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "zdizo/Kopiec.cpp"
-            timestampString = "545258066.338564"
+            timestampString = "545263616.709572"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
             landmarkName = "Kopiec::push(int data)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "zdizo/Tester.cpp"
+            timestampString = "545263616.709644"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "307"
+            endingLineNumber = "307"
+            landmarkName = "Tester::testHeapPush()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
