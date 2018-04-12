@@ -16,8 +16,10 @@ private:
     
     
 public:
-    Tester();
+    Tester(int numberOfElemenst);
     ~Tester();
+    int numberOfElements;
+    
     void startTestingMenu();
     void startTab();
     void startList();

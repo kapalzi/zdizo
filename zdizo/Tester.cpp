@@ -17,8 +17,9 @@ Tablica *tablica;
 Lista *list;
 Kopiec *heap;
 
-Tester::Tester()
+Tester::Tester(int numberOfElements)
 {
+    numberOfElements=numberOfElements;
 }
 
 void Tester::startTestingMenu()
@@ -48,7 +49,6 @@ void Tester::startTestingMenu()
 
 void Tester::generateRandomNumbersFile()
 {
-    int numberOfElements = 24;
     
     srand(time(NULL));
 
@@ -282,16 +282,15 @@ void Tester::startHeap()
                 break;
                 
             case 2:
-//                testTabBackPush();
-                heap->Tablica::print();
+                testHeapPop();
                 break;
                 
             case 3:
                 int look;
                 printf("Podaj szukana wartosc\n");
                 std::cin>>look;
-                printf("%i\n",tablica->isValue(look));
-                break;                break;
+                printf("%i\n",heap->isValue(look));
+                break;
                 
             case 4:
                 heap->print();
@@ -324,6 +323,16 @@ void Tester::testHeapPush()
         heap->push(num);
     }
     
+    std::cout << float( clock () - begin_time ) /  CLOCKS_PER_SEC<<std::endl;
+
+}
+void Tester::testHeapPop()
+{
+    const clock_t begin_time = clock();
+    for (int i=heap->size; i>0; i--)
+    {
+        heap->pop();
+    }
     std::cout << float( clock () - begin_time ) /  CLOCKS_PER_SEC<<std::endl;
 
 }

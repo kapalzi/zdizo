@@ -48,13 +48,11 @@ void Kopiec::push(int data)
     pushFirstElement(data);
 }
 
-//numer lewego syna = 2k + 1
-//numer prawego syna = 2k + 2
 void Kopiec::pop()
 {
     if(tab)
     {
-        tab[0]=tab[size];
+        tab[0]=tab[size-1];
         popBack();
         int dad =0;
         int son = getBiggerSon(dad);
@@ -67,39 +65,47 @@ void Kopiec::pop()
             tab[son]=tmp;
             dad=son;
             son=getBiggerSon(dad);
+            
+            if(son>size) break;
         }
     }
 }
 
 int Kopiec::getBiggerSon(int dad)
 {
-    int left = 2*dad+1;
-    int right = 2*dad+2;
-    if (tab[left]>=tab[right]) return left;
-    else return right;
+    
+        int left = 2*dad+1;
+        int right = 2*dad+2;
+        if (tab[left]>=tab[right]) return left;
+        else return right;
 }
 
 bool Kopiec::isValue(int data)
 {
-    if(tab)
-    {
-        int dad = 0;
-        while(tab[dad]!=data)
-        {
-            int left = 2*dad+1;
-            int right = 2*dad+2;
-            if(tab[data]<=tab[left])
-            {
-                dad=left;
-            }
-            else
-            {
-                dad=right;
-            }
-        }
-        return true;
-    }
-    else return false; //dokonczyc albo search z tablicy
+    
+   return Tablica::isValue(data);
+//    if(tab)
+//    {
+//        int dad = 0;
+//        while(tab[dad]!=data&&dad<=size)
+//        {
+//            int left = 2*dad+1;
+//            int right = 2*dad+2;
+//            if(tab[left]<data)
+//            {
+//                dad=right;
+//            }
+//            else
+//            {
+//                dad=left;
+//            }
+//        }
+//        if(tab[dad]==data)
+//            return true;
+//        else
+//            return false;
+//    }
+//    else return false;
 }
 
 void Kopiec::print()
