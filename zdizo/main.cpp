@@ -11,12 +11,10 @@
 
 int main()
 {
-//    Tester *tester = new Tester(5);
-//    tester->startTestingMenu();
-    DoTest::startTests();
-    
-    
-    
+    Tester *tester = new Tester(100);
+    tester->startTestingMenu();
+//    DoTest::startTests();
+
     return 0;
 }
 

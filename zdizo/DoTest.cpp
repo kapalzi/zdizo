@@ -20,7 +20,7 @@ DoTest::DoTest()
 void DoTest::startTests()
 {
     srand(time(NULL));
-    int numberOfElements = 10000;
+    int numberOfElements = 1000;
     
     clock_t begin_time = clock();
     clock_t midTime;
