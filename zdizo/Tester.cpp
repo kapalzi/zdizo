@@ -80,7 +80,7 @@ void Tester::startTab()
 
     do
     {
-        printf("Funkcje Tablicy \n 1. Dodaj elementy z pliku od przodu \n 2. Dodaj elementy z pliku od tyłu \n 3. Usuń element z przodu \n 4. Usuń element z tyłu\n 5. Sprawdz czy wartosc jest w tablicy\n 6. Wypisz wszystkie elementy");
+        printf("Funkcje Tablicy \n 1. Dodaj elementy z pliku od przodu \n 2. Dodaj elementy z pliku od tyłu \n 3. Usuń element z przodu \n 4. Usuń element z tyłu\n 5. Sprawdz czy wartosc jest w tablicy\n 6. Wypisz wszystkie elementy \n 7. Wróć \n");
         std::cin>>k;
         switch(k)
         {
@@ -109,6 +109,10 @@ void Tester::startTab()
                 
             case 6:
                 tablica->print();
+                break;
+                
+            case 7:
+                startTestingMenu();
                 break;
                 
             default: printf("Nie ma takiej opcji\n");
@@ -172,7 +176,7 @@ void Tester::startList()
     
     do
     {
-        printf("Funkcje Listy \n 1. Dodaj elementy z pliku od przodu \n 2. Dodaj elementy z pliku od tyłu \n 3. Usuń element z przodu \n 4. Usuń element z tyłu\n 5. Sprawdz czy wartosc jest w tablicy\n 6. Wypisz wszystkie elementy");
+        printf("Funkcje Listy \n 1. Dodaj elementy z pliku od przodu \n 2. Dodaj elementy z pliku od tyłu \n 3. Usuń element z przodu \n 4. Usuń element z tyłu\n 5. Sprawdz czy wartosc jest w tablicy\n 6. Wypisz wszystkie elementy \n 7. Wróć \n");
         std::cin>>k;
         switch(k)
         {
@@ -201,6 +205,10 @@ void Tester::startList()
                 
             case 6:
                 list->print();
+                break;
+                
+            case 7:
+                startTestingMenu();
                 break;
                 
             default: printf("Nie ma takiej opcji");
@@ -270,7 +278,7 @@ void Tester::startHeap()
     
     do
     {
-        printf("Funkcje Tablicy \n 1. Dodaj elementy z pliku \n 2. Usuń element\n 3. Sprawdz czy wartosc jest w kopcu \n 4. Wypisz wszystkie elementy\n");
+        printf("Funkcje Tablicy \n 1. Dodaj elementy z pliku \n 2. Usuń element\n 3. Sprawdz czy wartosc jest w kopcu \n 4. Wypisz wszystkie elementy\n 7. Wróć \n");
         std::cin>>k;
         switch(k)
         {
@@ -296,6 +304,10 @@ void Tester::startHeap()
                 
             case 6:
                 heap->print();
+                break;
+                
+            case 7:
+                startTestingMenu();
                 break;
                 
             default: printf("Nie ma takiej opcji\n");
