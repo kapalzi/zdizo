@@ -39,4 +39,9 @@ public:
     
     void testHeapPush();
     void testHeapPop();
+    
+    void testTabSearch(int x);
+    void testListSearch(int x);
+    void testHeapSearch(int x);
+    
 };

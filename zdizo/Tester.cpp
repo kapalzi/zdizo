@@ -13,14 +13,25 @@
 #include <ctime>
 using namespace std;
 
-Tablica *tablica = new Tablica();
-Lista *list = new Lista();
-Kopiec *heap = new Kopiec();
+Tablica *tablica;
+Lista *list;
+Kopiec *heap;
 
 Tester::Tester(int numberOfElements)
 {
     Tester::numberOfElements=numberOfElements;
     generateRandomNumbersFile();
+    tablica = new Tablica();
+    list = new Lista();
+    heap = new Kopiec();
+
+}
+
+Tester::~Tester()
+{
+    tablica->~Tablica();
+    list->~Lista();
+    heap->~Kopiec();
 }
 
 void Tester::startTestingMenu()
@@ -53,7 +64,6 @@ void Tester::generateRandomNumbersFile()
     srand(time(NULL));
 
     ofstream file ("/Users/krzysztof/Documents/pwr/zdizo/zdizo/numbers.txt");
-//    ofstream file ("numbers.txt");
 
     file<<numberOfElements<<"\n";
     
@@ -111,55 +121,49 @@ void Tester::startTab()
 
 void Tester::testTabFrontPush()
 {
-    fstream file("numbers.txt",ios::in);
+    fstream file("/Users/krzysztof/Documents/pwr/zdizo/zdizo/numbers.txt",ios::in);
     string line;
     int num;
-    const clock_t begin_time = clock();
     while (getline(file, line))
     {
         num = stoi(line);
         tablica->pushFront(num);
     }
-    std::cout << float(clock () - begin_time ) /  CLOCKS_PER_SEC<<std::endl;
-//    printf("Dodane\n");
 }
 
 void Tester::testTabBackPush()
 {
-    fstream file("numbers.txt",ios::in);
+    fstream file("/Users/krzysztof/Documents/pwr/zdizo/zdizo/numbers.txt",ios::in);
     string line;
     int num;
-    const clock_t begin_time = clock();
+    
     while (getline(file, line))
     {
         num = stoi(line);
         tablica->pushBack(num);
     }
     
-    std::cout << float( clock () - begin_time ) /  CLOCKS_PER_SEC<<std::endl;
-//    printf("Dodane\n");
+    
 }
 
 void Tester::testTabFrontPop()
 {
-    const clock_t begin_time = clock();
+    
     for (int i=tablica->size; i>0; i--)
     {
         tablica->popFront();        
     }
 //    printf("Usunięte\n");
-    std::cout << float( clock () - begin_time ) /  CLOCKS_PER_SEC<<std::endl;
+    
 }
 
 void Tester::testTabBackPop()
 {
-    const clock_t begin_time = clock();
+    
     for (int i=tablica->size; i>0; i--)
     {
         tablica->popBack();
     }
-//    printf("Usunięte\n");
-    std::cout << float( clock () - begin_time ) /  CLOCKS_PER_SEC<<std::endl;
 }
 
 void Tester::startList()
@@ -208,55 +212,55 @@ void Tester::startList()
 
 void Tester::testListFrontPush()
 {
-    fstream file("numbers.txt",ios::in);
+    fstream file("/Users/krzysztof/Documents/pwr/zdizo/zdizo/numbers.txt",ios::in);
     string line;
     int num;
-    const clock_t begin_time = clock();
+    
     while (getline(file, line))
     {
         num = stoi(line);
         list->pushFront(num);
     }
-    std::cout << float( clock () - begin_time )/  CLOCKS_PER_SEC <<std::endl;
+    
 }
 
 void Tester::testListBackPush()
 {
-    fstream file("numbers.txt",ios::in);
+    fstream file("/Users/krzysztof/Documents/pwr/zdizo/zdizo/numbers.txt",ios::in);
     string line;
     int num;
-    const clock_t begin_time = clock();
+    
     while (getline(file, line))
     {
         num = stoi(line);
         list->pushBack(num);
     }
-    std::cout << float( clock () - begin_time )/  CLOCKS_PER_SEC <<std::endl;
+    
 }
 
 void Tester::testListFrontPop()
 {
-    const clock_t begin_time = clock();
+    
     if (list->head)
     {
         while(list->counter>0)
         {
             list->popFront();
         }
-        std::cout << float( clock () - begin_time )/  CLOCKS_PER_SEC <<std::endl;
+    
     }
 }
 
 void Tester::testListBackPop()
 {
-    const clock_t begin_time = clock();
+    
     if (list->head)
     {
         while(list->counter>0)
         {
             list->popBack();
         }
-        std::cout << float( clock () - begin_time )/  CLOCKS_PER_SEC <<std::endl;
+        
     }
 }
 
@@ -302,39 +306,41 @@ void Tester::startHeap()
 }
 void Tester::testHeapPush()
 {
-    
+//    fstream file ("/Users/krzysztof/Documents/pwr/zdizo/zdizo//Users/krzysztof/Documents/pwr/zdizo/zdizo/numbers.txt");
 
-    fstream file ("/Users/krzysztof/Documents/pwr/zdizo/zdizo/numbers.txt");
-
-//    fstream file("numbers.txt",ios::in);
+    fstream file("/Users/krzysztof/Documents/pwr/zdizo/zdizo/numbers.txt",ios::in);
     string line;
     int num;
-    const clock_t begin_time = clock();
+    
     while (getline(file, line))
     {
         num = stoi(line);
         heap->push(num);
     }
-    std::cout << float( clock () - begin_time ) /  CLOCKS_PER_SEC<<std::endl;
-
 }
 void Tester::testHeapPop()
 {
-    const clock_t begin_time = clock();
+    
     for (int i=heap->size; i>0; i--)
     {
         heap->pop();
     }
-    std::cout << float( clock () - begin_time ) /  CLOCKS_PER_SEC<<std::endl;
-
 }
 
+void Tester::testTabSearch(int x)
+{
+    tablica->isValue(x);
+}
 
+void Tester::testListSearch(int x)
+{
+    list->isValue(x);
+}
 
-
-
-
-
+void Tester::testHeapSearch(int x)
+{
+    heap->isValue(x);
+}
 
 
 

@@ -123,6 +123,7 @@ void Lista::popBack()
     }
     else
     {
+        counter = 0;
         return;
     }
     counter--;

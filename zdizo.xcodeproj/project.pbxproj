@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E20EA23020821A51007BA4A6 /* DoTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E20EA22E20821A51007BA4A6 /* DoTest.cpp */; };
 		E23CDA6F205AB51B00E10AD7 /* Kopiec.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E23CDA6D205AB51B00E10AD7 /* Kopiec.cpp */; };
 		E2674BE8205433F60057F9C1 /* Tablica.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2674BE6205433F60057F9C1 /* Tablica.cpp */; };
 		E2674BEB2054359C0057F9C1 /* Lista.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2674BE92054359C0057F9C1 /* Lista.cpp */; };
@@ -27,6 +28,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E20EA22E20821A51007BA4A6 /* DoTest.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = DoTest.cpp; sourceTree = "<group>"; };
+		E20EA22F20821A51007BA4A6 /* DoTest.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = DoTest.hpp; sourceTree = "<group>"; };
 		E23CDA6D205AB51B00E10AD7 /* Kopiec.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Kopiec.cpp; sourceTree = "<group>"; };
 		E23CDA6E205AB51B00E10AD7 /* Kopiec.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Kopiec.hpp; sourceTree = "<group>"; };
 		E2674BE6205433F60057F9C1 /* Tablica.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Tablica.cpp; sourceTree = "<group>"; };
@@ -70,6 +73,8 @@
 			isa = PBXGroup;
 			children = (
 				E2F67737204AFD6A00313FC0 /* main.cpp */,
+				E20EA22E20821A51007BA4A6 /* DoTest.cpp */,
+				E20EA22F20821A51007BA4A6 /* DoTest.hpp */,
 				E2A801FD20665989006187F8 /* Tester.cpp */,
 				E2A801FE20665989006187F8 /* Tester.hpp */,
 				E2674BE6205433F60057F9C1 /* Tablica.cpp */,
@@ -141,6 +146,7 @@
 			files = (
 				E2F67738204AFD6A00313FC0 /* main.cpp in Sources */,
 				E2674BE8205433F60057F9C1 /* Tablica.cpp in Sources */,
+				E20EA23020821A51007BA4A6 /* DoTest.cpp in Sources */,
 				E2A801FF20665989006187F8 /* Tester.cpp in Sources */,
 				E23CDA6F205AB51B00E10AD7 /* Kopiec.cpp in Sources */,
 				E2674BEB2054359C0057F9C1 /* Lista.cpp in Sources */,
