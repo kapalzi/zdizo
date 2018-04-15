@@ -92,7 +92,7 @@ void DoTest::startTests()
     }
     std::cout<<"Tab search: " << (float(clock () - begin_time - badTimeCounter ) /  CLOCKS_PER_SEC)/100<<std::endl;
     
-    //    TEST DODAWANIA Do KOLEJKI OD PRZODU
+    //    TEST DODAWANIA Do LISTY OD PRZODU
     begin_time = clock();
     badTimeCounter = 0.0;
     for (int i =0; i<100; i++)
@@ -104,7 +104,7 @@ void DoTest::startTests()
     }
     std::cout <<"List front push: " <<(float(clock () - begin_time - badTimeCounter ) /  CLOCKS_PER_SEC)/100<<std::endl;
     
-    //    TEST DODAWANIA Do KOLEJKI OD TYŁU
+    //    TEST DODAWANIA Do LISTY OD TYŁU
     begin_time = clock();
     badTimeCounter = 0.0;
     for (int i =0; i<100; i++)
@@ -116,7 +116,7 @@ void DoTest::startTests()
     }
     std::cout <<"List back push: " <<(float(clock () - begin_time - badTimeCounter ) /  CLOCKS_PER_SEC)/100<<std::endl;
     
-    //    TEST USUWANIA Z KOLEJKI OD PRZODU
+    //    TEST USUWANIA Z LISTY OD PRZODU
     begin_time = clock();
     badTimeCounter = 0.0;
     for (int i =0; i<100; i++)
@@ -129,7 +129,7 @@ void DoTest::startTests()
     }
     std::cout<<"List front pop: " << (float(clock () - begin_time - badTimeCounter ) /  CLOCKS_PER_SEC)/100<<std::endl;
     
-    //    TEST USUWANIA Z KOLEJKI OD TYLU
+    //    TEST USUWANIA Z LISTY OD TYLU
     begin_time = clock();
     badTimeCounter = 0.0;
     for (int i =0; i<100; i++)

@@ -63,7 +63,7 @@ void Tester::generateRandomNumbersFile()
     
     srand(time(NULL));
 
-    ofstream file ("/Users/krzysztof/Documents/pwr/zdizo/zdizo/numbers.txt");
+    ofstream file ("numbers.txt");
 
     file<<numberOfElements<<"\n";
     
@@ -121,7 +121,7 @@ void Tester::startTab()
 
 void Tester::testTabFrontPush()
 {
-    fstream file("/Users/krzysztof/Documents/pwr/zdizo/zdizo/numbers.txt",ios::in);
+    fstream file("numbers.txt",ios::in);
     string line;
     int num;
     while (getline(file, line))
@@ -133,7 +133,7 @@ void Tester::testTabFrontPush()
 
 void Tester::testTabBackPush()
 {
-    fstream file("/Users/krzysztof/Documents/pwr/zdizo/zdizo/numbers.txt",ios::in);
+    fstream file("numbers.txt",ios::in);
     string line;
     int num;
     
@@ -212,7 +212,7 @@ void Tester::startList()
 
 void Tester::testListFrontPush()
 {
-    fstream file("/Users/krzysztof/Documents/pwr/zdizo/zdizo/numbers.txt",ios::in);
+    fstream file("numbers.txt",ios::in);
     string line;
     int num;
     
@@ -226,7 +226,7 @@ void Tester::testListFrontPush()
 
 void Tester::testListBackPush()
 {
-    fstream file("/Users/krzysztof/Documents/pwr/zdizo/zdizo/numbers.txt",ios::in);
+    fstream file("numbers.txt",ios::in);
     string line;
     int num;
     
@@ -306,9 +306,7 @@ void Tester::startHeap()
 }
 void Tester::testHeapPush()
 {
-//    fstream file ("/Users/krzysztof/Documents/pwr/zdizo/zdizo//Users/krzysztof/Documents/pwr/zdizo/zdizo/numbers.txt");
-
-    fstream file("/Users/krzysztof/Documents/pwr/zdizo/zdizo/numbers.txt",ios::in);
+    fstream file("numbers.txt",ios::in);
     string line;
     int num;
     
