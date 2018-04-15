@@ -11,6 +11,7 @@
 #include <fstream>
 #include <random>
 #include <ctime>
+
 using namespace std;
 
 Tablica *tablica;
@@ -77,41 +78,53 @@ void Tester::generateRandomNumbersFile()
 void Tester::startTab()
 {
     int k;
-
+    int x;
     do
     {
-        printf("Funkcje Tablicy \n 1. Dodaj elementy z pliku od przodu \n 2. Dodaj elementy z pliku od tyłu \n 3. Usuń element z przodu \n 4. Usuń element z tyłu\n 5. Sprawdz czy wartosc jest w tablicy\n 6. Wypisz wszystkie elementy \n 7. Wróć \n");
+        printf("Funkcje Tablicy \n 1. Dodaj elementy z pliku \n 2. Dodaj element od przodu \n 3. Dodaj element od tyłu \n 4. Usuń element z przodu \n 5. Usuń element z tyłu\n 6. Sprawdz czy wartosc jest w tablicy\n 7. Usuń wszystkie elementy\n 8. Wypisz wszystkie elementy \n 9. Wróć \n");
         std::cin>>k;
         switch(k)
         {
             case 1:
-                testTabFrontPush();
+                testTabBackPush();
                 break;
                 
             case 2:
-                testTabBackPush();
+                printf("Podaj wartosc\n");
+                std::cin>>x;
+                tablica->pushFront(x);
                 break;
 
             case 3:
-                testTabFrontPop();
+                printf("Podaj wartosc\n");
+                std::cin>>x;
+                tablica->pushBack(x);
                 break;
     
             case 4:
-                testTabBackPop();
+                tablica->popFront();
+                break;
+                
+            case 5:
+                tablica->popBack();
                 break;
     
-            case 5:
+            case 6:
                 int look;
                 printf("Podaj szukana wartosc\n");
                 std::cin>>look;
                 printf("%i\n",tablica->isValue(look));
                 break;
                 
-            case 6:
+            case 7:
+                testTabBackPop();
+                break;
+                
+            case 8:
                 tablica->print();
                 break;
                 
-            case 7:
+            case 9:
                 startTestingMenu();
                 break;
                 
@@ -172,11 +185,11 @@ void Tester::testTabBackPop()
 
 void Tester::startList()
 {
-    int k;
+    int k,x;
     
     do
     {
-        printf("Funkcje Listy \n 1. Dodaj elementy z pliku od przodu \n 2. Dodaj elementy z pliku od tyłu \n 3. Usuń element z przodu \n 4. Usuń element z tyłu\n 5. Sprawdz czy wartosc jest w tablicy\n 6. Wypisz wszystkie elementy \n 7. Wróć \n");
+        printf("Funkcje Listy \n 1. Dodaj elementy z pliku\n 2. Dodaj element od przodu \n 3. Dodaj element od tyłu \n 4. Usuń element z przodu \n 5. Usuń element z tyłu\n 6. Sprawdz czy wartosc jest w tablicy\n 7 .Usuń wszystkie elementy \n 8. Wypisz wszystkie elementy \n 9. Wróć \n");
         std::cin>>k;
         switch(k)
         {
@@ -185,29 +198,42 @@ void Tester::startList()
                 break;
                 
             case 2:
-                testListBackPush();
+                printf("Podaj wartosc\n");
+                std::cin>>x;
+                list->pushFront(x);
+                break;
                 break;
                 
             case 3:
-                testListFrontPop();
+                printf("Podaj wartosc\n");
+                std::cin>>x;
+                list->pushBack(x);
                 break;
                 
             case 4:
-                testListBackPop();
+                list->popFront();
                 break;
                 
             case 5:
+                list->popBack();
+                break;
+
+            case 6:
                 int look;
                 printf("Podaj szukana wartosc\n");
                 std::cin>>look;
                 printf("%i\n",list->isValue(look));
                 break;
                 
-            case 6:
+            case 7:
+                testListFrontPop();
+                break;
+                
+            case 8:
                 list->print();
                 break;
                 
-            case 7:
+            case 9:
                 startTestingMenu();
                 break;
                 
@@ -274,11 +300,11 @@ void Tester::testListBackPop()
 
 void Tester::startHeap()
 {
-    int k;
+    int k,x;
     
     do
     {
-        printf("Funkcje Tablicy \n 1. Dodaj elementy z pliku \n 2. Usuń element\n 3. Sprawdz czy wartosc jest w kopcu \n 4. Wypisz wszystkie elementy\n 7. Wróć \n");
+        printf("Funkcje Tablicy \n 1. Dodaj elementy z pliku \n 2. Dodaj element \n 3. Usuń element \n 4. Sprawdz czy wartosc jest w kopcu \n 5. Usuń wszystkie elementy \n 6. Wypisz wszystkie elementy\n 7. Wróć \n");
         std::cin>>k;
         switch(k)
         {
@@ -287,18 +313,24 @@ void Tester::startHeap()
                 break;
                 
             case 2:
-                testHeapPop();
+                printf("Podaj wartosc\n");
+                std::cin>>x;
+                heap->push(x);
                 break;
                 
             case 3:
+                heap->pop();
+                break;
+                
+            case 4:
                 int look;
                 printf("Podaj szukana wartosc\n");
                 std::cin>>look;
                 printf("%i\n",heap->isValue(look));
                 break;
                 
-            case 4:
-                heap->print();
+            case 5:
+                testHeapPop();
                 break;
                 
                 
